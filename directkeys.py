@@ -12,7 +12,6 @@ SendInput = ctypes.windll.user32.SendInput
 
 A = 0x1E
 B = 0x30
-
 start = 0x39
 leftarrow = 0xcb
 rightarrow = 0xcd
