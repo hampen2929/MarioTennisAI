@@ -29,7 +29,8 @@ import matplotlib.pyplot as plt
 # In[2]:
 
 
-import threading
+from threading import Thread
+from multiprocessing import Process
 import subprocess
 import time
 from win32 import win32gui
@@ -394,29 +395,6 @@ class QNet_Agent(object):
         self.number_of_frames += 1
 
 
-# # スレッド
-
-# ## 画像取得
-
-# In[23]:
-
-
-frame_current = {'frame':grab_screen(left, top, width, height, False)}
-stop_flag = {'flag':False}
-
-
-# In[24]:
-
-
-t1 = threading.Thread(target=observation, args=(left, top, width, height, frame_current, stop_flag))
-t1.start()
-
-
-# ## スコア
-
-# In[28]:
-
-
 def get_score(my_score, enemy_score, stop_flag):
     while True:
         # score取得
@@ -429,88 +407,40 @@ def get_score(my_score, enemy_score, stop_flag):
             break
 
 
-# In[29]:
+# # スレッド
+
+# ## 画像取得
+
+# In[23]:
 
 
+frame_current = {'frame':grab_screen(left, top, width, height, False)}
+stop_flag = {'flag':False}
+
+#main
+
+
+t1 = Thread(target=observation, args=(left, top, width, height, frame_current, stop_flag))
+t1.start()
+
+
+# ## スコア
 my_score = {'my_score':0}
 enemy_score = {'enemy_score':0}
 
-t2 = threading.Thread(target=get_score, args=(my_score, enemy_score, stop_flag))
+t2 = Thread(target=get_score, args=(my_score, enemy_score, stop_flag))
 t2.start()
 
+# 録画
 
-# ## 報酬
-
-# In[30]:
-
-
-def reward_calculation(my_last_score, enemy_last_score, reward, stop_flag):
-    #スコアと報酬初期化
-    score = ('99', '99')
-    last_score = ('99', '99')
-    reward = -3
-    count_game = 0
-    
-    while stop_flag['flag'] != True:
-        #スコア取得
-        score = (str(my_score['my_score']), str(enemy_score['enemy_score']))
-        
-        #ポイント終了
-        if (score != last_score) & ('nan' not in score):
-            point_fin_flag['point_fin_flag'] = True
-            #print('score:', str(score))
-            
-            #(0,0)で報酬清算
-            #1ゲーム目の0-0は報酬計算対象外
-            if (score == init_flag) & (count_game == 0):
-                count_game += 1
-                #print('game: ', count_game)
-            
-            #2ゲーム目以降
-            if (score == init_flag) & (count_game > 0):
-                reward = score_reward_dict[last_score[0]] - score_reward_dict[last_score[1]]
-                #print('reward:', str(reward))
-                
-                count_game += 1
-                #print('game: ', count_game)
-            
-            #0-0の認識できなかった時の報酬計算処理
-            #if
-            
-
-            last_score = copy.copy(score)
-            my_last_score['my_last_score'] = last_score[0]
-            enemy_last_score['enemy_last_score'] = last_score[1]
-            
-    
-    print('fin')
-
-
-# reward = {'reward':-3}
-# my_last_score = {'my_last_score': '99'}
-# enemy_last_score = {'enemy_last_score': '99'}
-# 
-# 
-# t3 = threading.Thread(target=reward_calculation, args=(my_last_score, enemy_last_score, reward, stop_flag))
-# t3.start()
-
-# print(my_last_score['my_last_score'], enemy_last_score['enemy_last_score'])
-
-# ## 録画
-
-# video_stop_flag = {'flag':False}
-# t4 = Process(target=video_record, args=(frame_current['frame'], stop_flag)) # argsで引数二つ以上じゃないとエラー出る
+# video_stop_flag = {'flag': False}
+# t4 = Process(target=video_record, args=(stop_flag, True))  # argsで引数二つ以上じゃないとエラー出る
 # t4.start()
+
 
 # imshow(frame_current['frame'])
 
-# # 学習
-
-# In[33]:
-
-
-# In[35]:
-
+# 学習
 
 memory = ExperienceReplay(replay_mem_size)
 qnet_agent = QNet_Agent()
@@ -528,69 +458,70 @@ reward = 0.0
 done = False
 
 score = ('99', '99')
-last_score = ('99', '99')49
+last_score = ('99', '99')
 num_episodes = 10000
 
 # 0-0になる数(ゲーム数)
+
 for i_episode in range(num_episodes):
-    
+
 
     score_list_buf = []
     reward_list_buf = []
-    
+
     new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
     state = new_state
-    
+
     # 1ゲーム終わるまで継続
     while True:
         frames_total += 1
-        
+
         epsilon = calculate_epsilon(frames_total)
-        
+
         #行動決定
         action = qnet_agent.select_action(state, epsilon)
-        
+
         #行動
         take_action(action)
-        
+
         #新しい環境
         state = new_state
-        
+
         new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
-        
+
         score = (str(my_score['my_score']), str(enemy_score['enemy_score']))
-        
-        #ゲームが終わったかの確認               
+
+        #ゲームが終わったかの確認
         memory.push(state, action, new_state, reward, done)
         qnet_agent.optimize()
-        
+
         #ポイント終了
         if (score != last_score) & ('nan' not in score):
             print('score:', str(score))
-            
+
             score_list_buf.append(score)
-            
-            #(0,0)で報酬清算
-            #1ゲーム目の0-0は報酬計算対象外
-            if (score == init_flag) & (count_game == 0):
-                count_game += 1
-                print('game: ', count_game)
-            
-            #2ゲーム目以降
-            if (score == init_flag) & (count_game > 0):
-                reward = score_reward_dict[last_score[0]] - score_reward_dict[last_score[1]]
+
+            # (0,0)で報酬清算
+            if (score == init_flag):
+                # 1ゲーム目の0-0は報酬計算対象外
+                if count_game == 0:
+                    reward = -3
+                # 2ゲーム目以降
+                else:
+                    reward = score_reward_dict[last_score[0]] - score_reward_dict[last_score[1]]
+
                 reward_list.append(reward)
                 print('reward:', str(reward))
-                
+
                 count_game += 1
                 print('game: ', count_game)
-            
+
             #0-0の認識できなかった時の報酬計算処理
             #if
 
             last_score = copy.copy(score)
             break
-        
+
         score_list.append(score_list_buf)
-        
+
 

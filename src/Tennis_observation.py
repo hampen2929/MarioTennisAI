@@ -201,15 +201,21 @@ def get_score(my_score, enemy_score, frame, stop_flag):
             print('stop getting score')
             break
 
+import atexit
 
-def video_record(frame, stop_flag):
+
+def video_record(stop_flag, _):
     video = cv2.VideoWriter(path2video, fourcc, fps, (int(width), int(height)))
-    while True:
-        video.write(frame)
-
-        if stop_flag['flag'] == True:
-            video.release()
-            print('stop')
-            break
-
-    video.release()
+    try:
+        while True:
+            frame = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(left, top, left + width, top + height))),
+                                 cv2.COLOR_BGR2RGB)
+            video.write(frame)
+    except:
+        print('key')
+    else:
+        print('else')
+    finally:
+        print('q')
+        video.release()
+    atexit.register(print('exit'))
