@@ -149,7 +149,7 @@ score_to_solve = 18
 clip_error = True
 normalize_image = True
 
-file2save = './model/tennis_save.pth'
+file2save = '../model/tennis_save.pth'
 save_model_frequency = 10000
 resume_previous_training = False
 

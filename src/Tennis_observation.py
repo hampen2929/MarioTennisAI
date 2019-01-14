@@ -28,7 +28,7 @@ frame_per_sec = (1 / fps)
 
 ## video_record
 video_name = 'Mario_tennis_AI'
-path2video = './videos/'+video_name+'.mp4'
+path2video = '../videos/'+video_name+'.mp4'
 fourcc = cv2.VideoWriter_fourcc('m','p','4','v')
 stop_flag = {'flag':False}
 
@@ -73,7 +73,7 @@ pos_list = score_pos(width, height, size_delta)
 
 
 score_value_list = ['0', '15', '30', '40', '60', '99']
-path_to_temp = './images/score_template/'
+path_to_temp = '../images/score_template/'
 name_temp_list = os.listdir(path_to_temp)
 
 threshold = 0.8
