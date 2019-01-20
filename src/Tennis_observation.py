@@ -1,10 +1,10 @@
 # インポート
 import os
-import cv2
-import numpy as np
 import numpy as np
 from PIL import ImageGrab
 import cv2
+from Tennis_action import *
+import time
 
 ## スコア取得
 
@@ -21,10 +21,11 @@ width = 705
 height = 545
 
 #少し大きめに画像をとってくる
-size_delta = 5
+size_delta = 0
 
 fps    = 20
 frame_per_sec = (1 / fps)
+
 
 ## video_record
 video_name = 'Mario_tennis_AI'
@@ -87,6 +88,8 @@ for path in name_temp_list:
 
 def observation(left, top, width, height, frame, stop_flag):
     while True:
+        #pillow Original RGB, cv2 originally GBR
+        #cv2.COLOR_BGR2RGB?
         frame['frame'] = cv2.cvtColor(np.array(ImageGrab.grab(bbox=(left, top, left + width, top + height))), cv2.COLOR_BGR2RGB)
         if stop_flag['flag'] == True:
             break
@@ -201,8 +204,6 @@ def get_score(my_score, enemy_score, frame, stop_flag):
             print('stop getting score')
             break
 
-import atexit
-
 
 def video_record(stop_flag, _):
     video = cv2.VideoWriter(path2video, fourcc, fps, (int(width), int(height)))
@@ -219,3 +220,4 @@ def video_record(stop_flag, _):
         print('q')
         video.release()
     atexit.register(print('exit'))
+0

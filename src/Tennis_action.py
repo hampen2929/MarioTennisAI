@@ -6,6 +6,7 @@
 import ctypes
 import time
 import numpy as np
+import itertools
 
 SendInput = ctypes.windll.user32.SendInput
 # keys memory address
@@ -18,26 +19,27 @@ leftarrow = 0xcb # move to left
 rightarrow = 0xcd # move to right
 uparrow = 0xc8 # move to upper
 downarrow = 0xd0 # move to lower
-stay = 0x0B # 0: stayz`
+stay = 0x0B # 0: stay
 noshot = 0x0A # 9: noshot
 
 F = 0x21 # advanced frame
 
 # keys list
 
-keys_move_to_press = [leftarrow, rightarrow]
-keys_move_name = ['left', 'right']
+keys_move_to_press = [leftarrow, rightarrow, stay]
+keys_move_name = ['left', 'right', 'stay']
 
 keys_shot_to_press = [A, noshot]
 keys_shot_name = ['A', 'noshot']
 
+#sleep_time = [0.3]
+
 num_move_actions = len(keys_move_to_press)
 num_shot_actions = len(keys_shot_to_press)
+#num_sleep_time = len(sleep_time)
 
-keys_to_press = [[keys_move_to_press[0], keys_shot_to_press[0]],
-                 [keys_move_to_press[0], keys_shot_to_press[1]],
-                 [keys_move_to_press[1], keys_shot_to_press[0]],
-                 [keys_move_to_press[1], keys_shot_to_press[1]]]
+keys_to_press = list(itertools.product(keys_move_to_press, keys_shot_to_press))
+keys_to_press_name = list(itertools.product(keys_move_name, keys_shot_name))
 
 num_actions = len(keys_to_press)
 
@@ -104,11 +106,15 @@ def action_random():
 def take_action(action):
     actions = keys_to_press[action]
 
+    #print(keys_to_press_name[action])
+
     # ボタン選択
     PressKey(actions[0])  # move
-    PressKey(actions[1])  # shot
-
-    time.sleep(0.4)
-
+    time.sleep(0.3)
     ReleaseKey(actions[0])  # move
+
+    PressKey(actions[1])  # shot
+    time.sleep(0.2)
     ReleaseKey(actions[1])  # shot
+
+
