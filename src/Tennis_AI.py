@@ -101,9 +101,9 @@ hidden_layer = 512
 replay_mem_size = 100000
 batch_size = 32
 
-update_target_frequency = 5000
+update_target_frequency = 5
 
-double_dqn = True
+double_dqn = False
 
 egreedy = 0.9
 egreedy_final = 0.01
@@ -114,9 +114,7 @@ score_to_solve = 18
 
 clip_error = True
 normalize_image = True
-
-file2save = '../model/tennis_save.pth'
-save_model_frequency = 10000
+save_model_frequency = 5
 resume_previous_training = False
 
 position = 0
@@ -129,8 +127,8 @@ number_of_outputs = len(keys_to_press)
 number_of_skips = 10
 
 # reward
-init_flag = ('0.0','0.0')
-score_reward_dict = {'0.0':0, '15.0':1, '30.0':2, '40.0':3, '60.0':4, '99':99, 'nan':np.nan}
+init_flag = (0,0)
+score_reward_dict = {0:0, 15:1, 30:2, 40:3, 60:4, 99:99, np.nan : np.nan}
 
 
 ## 関数
@@ -145,10 +143,10 @@ def load_model():
     return torch.load(file2save)
 
 
-def save_model(model):
+def save_model(model, file2save):
     torch.save(model.state_dict(), file2save)
 
-6
+
 def preprocess_frame(frame):
     frame = frame.transpose((2,0,1))
     frame = torch.from_numpy(frame)
@@ -247,7 +245,7 @@ class QNet_Agent(object):
         self.optimizer = optim.Adam(params=self.nn.parameters(), lr=learning_rate)
         #self.optimizer = optim.RMSprop(params=mynn.parameters(), lr=learning_rate)
 
-        self.number_of_frames = 0
+        self.number_of_games = 0
 
         if resume_previous_training and os.path.exists(file2save):
             print("Loading previously saved model ... ")
@@ -316,25 +314,62 @@ class QNet_Agent(object):
 
         self.optimizer.step()
 
-        if self.number_of_frames % update_target_frequency == 0:
+        if self.number_of_games % update_target_frequency == 0:
             self.target_nn.load_state_dict(self.nn.state_dict())
 
-        if self.number_of_frames % save_model_frequency == 0:
-            save_model(self.nn)
+            file2save = '../model/tennis_save_{0:04d}.pth'.format(self.number_of_games)
+            save_model(self.nn, file2save)
 
-        self.number_of_frames += 1
+        self.number_of_games += 1
 
 
-def get_score(my_score, enemy_score, stop_flag):
+def get_score(my_score, enemy_score, reward, game_end_flag):
+    count_game = 0
+    last_score = (99, 99)
+    info_list = []
+
+    #ゲーム開始
     while True:
-        # score取得
         score = score_check(frame_current['frame'])
-        my_score['my_score'] = float(score[0])
-        enemy_score['enemy_score'] = float(score[1])
+        
+        #ポイント取得
+        if (score != last_score) & (np.nan not in score):
+            print('score:', str(score))
+            #print('server', server_flag['flag'])
 
-        if stop_flag['flag'] == True:
-            print('stop getting score')
-            break
+            reward['reward'] = score_reward_dict[score[0]] - score_reward_dict[score[1]]
+            print('reward: ', reward['reward'])
+
+
+            my_init_judge = (score_reward_dict[score[0]] - score_reward_dict[last_score[0]])
+            enemy_init_judge = (score_reward_dict[score[1]] - score_reward_dict[last_score[1]])
+
+            # (0,0)で報酬清算
+            # (0,0)読み取り損ねたと時の対応も込み
+            if (score == init_flag) | (((my_init_judge < 0) | (enemy_init_judge < 0)) & (15 in score)):
+                # 1ゲーム目の0-0は報酬計算対象外
+                if count_game == 0:
+                    reward['reward'] = 0
+                    count_game += 1
+
+                # 2ゲーム目以降
+                else:
+
+                    info_df = pd.DataFrame(info_list, columns=column)
+                    info_df.to_excel('../data/info_df.xlsx', index=False)
+
+                    count_game += 1
+
+                    my_score['score'] = score[0]
+                    enemy_score['score'] = score[1]
+
+                    game_end_flag['flag'] = True
+
+            info = [count_match['score'], server_flag['flag'], count_game, score, reward['reward']]
+            info_list.append(info)
+
+            last_score = copy.copy(score)
+
 
 def end_judge(end_flag, _):
     while True:
@@ -347,9 +382,11 @@ def end_judge(end_flag, _):
         if len(loc[0]) > 0:
             end_flag['flag'] = True
 
-def end_action(end_flag):
+def end_action(end_flag, count_match):
     print('end game and next!')
     time.sleep(10)
+
+    cv2.imwrite('../score/game_score_{0:04d}.png'.format(count_match['score']), frame_current['frame'])
 
     PressKey(A)
     time.sleep(0.2)
@@ -393,14 +430,20 @@ def server_judge(server_flag, img_server_mario, img_server_luigi):
 frame_current = {'frame':grab_screen(left, top, width, height, False)}
 stop_flag = {'flag':False}
 
+
+frame_current = {'frame':grab_screen(left, top, width, height, False)}
 t1 = Thread(target=observation, args=(left, top, width, height, frame_current, stop_flag))
 t1.start()
 
 ## スコア
-my_score = {'my_score':0}
-enemy_score = {'enemy_score':0}
+my_score = {'score':0}
+enemy_score = {'score':0}
+game_end_flag = {'flag':False}
+count_match = {'score':1}
+reward = {'reward':0}
 
-t2 = Thread(target=get_score, args=(my_score, enemy_score, stop_flag))
+
+t2 = Thread(target=get_score, args=(my_score, enemy_score, reward, game_end_flag))
 t2.start()
 
 #end_flag
@@ -432,14 +475,9 @@ count_game = 0
 
 active_window()
 
-reward = -3a0a4a4969494
-
 done = False
 
 score_read_flag = False
-
-score = ('99', '99')
-last_score = ('99', '99')
 
 num_match = 100
 num_game = 1000
@@ -448,92 +486,44 @@ info_list = []
 column = ['match', 'server', 'game', 'score', 'reward']
 
 count_game = 0
-count_match = 0
 
-#試合終了
+new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
+state = new_state
+
+# 1ゲーム終わるまで継続
 while True:
-    count_match += 1
-    print(count_match)
-    # 0-0になる数(ゲーム数)
-    while True:
+    frames_total += 1
+    epsilon = calculate_epsilon(frames_total)
 
-        print('reward:', str(reward))
-        print('game: ', count_game)
+    #行動決定
+    action = qnet_agent.select_action(state, epsilon)
 
-        new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
-        state = new_state
+    #行動
+    take_action(action)
 
-        # 1ゲーム終わるまで継続
-        while True:
-            frames_total += 1
-            epsilon = calculate_epsilon(frames_total)
+    #新しい環境
+    state = copy.copy(new_state)
+    new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
 
-            #行動決定
-            action = qnet_agent.select_action(state, epsilon)
+    score = (str(my_score['score']), str(enemy_score['score']))
 
-            #行動
-            take_action(action)
+    #ExperienceMemory
+    memory.push(state, action, new_state, reward['reward'], server_flag['flag'])
 
-            #新しい環境
-            state = copy.copy(new_state)
-            new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
+    #ゲーム終了
+    if game_end_flag['flag'] == True:
+        # 最適化
+        qnet_agent.optimize()
+        game_end_flag['flag'] = False
 
-            score = (str(my_score['my_score']), str(enemy_score['enemy_score']))
+    #試合終了
+    if end_flag['flag'] == True:
 
-            #ExperienceMemory
-            memory.push(state, action, new_state, reward, server_flag['flag'])
+        end_action(end_flag, count_match)
+        count_match['score'] = count_match['score'] + 1
 
-            #ポイント終了
-            if (score != last_score) & ('nan' not in score):
-                print('score:', str(score))
-                print('server', server_flag['flag'])
-
-                my_init_judge = (score_reward_dict[score[0]] - score_reward_dict[last_score[0]])
-                enemy_init_judge = (score_reward_dict[score[1]] - score_reward_dict[last_score[1]])
+        end_flag['flag'] == False
 
 
 
-                score_read_flag = True
 
-                # (0,0)で報酬清算
-                # (0,0)読み取り損ねたと時の対応も込み
-                if (score == init_flag) | (my_init_judge < 0) | (enemy_init_judge < 0):
-                    # 1ゲーム目の0-0は報酬計算対象外
-                    if count_game == 0:
-                        reward = -30
-                        count_game += 1
-
-                    # 2ゲーム目以降0
-                    else:
-                        #最適化
-                        qnet_agent.optimize()
-
-                        reward = score_reward_dict[last_score[0]] - score_reward_dict[last_score[1]]
-
-                        info = [count_match, server_flag['flag'], count_game, score, reward]
-                        info_list.append(info)
-
-                        info_df = pd.DataFrame(info_list, columns=column)
-                        info_df.to_csv('../csv/info_df.csv', index=False)
-
-                        count_game += 1
-                        last_score = copy.copy(score)
-
-                        break
-
-                info = [count_match, server_flag['flag'], count_game, score, reward]
-                info_list.append(info)
-
-                info_df = pd.DataFrame(info_list, columns=column)
-                info_df.to_csv('../csv/info_df.csv', index=False)
-
-                last_score = copy.copy(score)
-
-
-            if end_flag['flag'] == True:
-                info_df = pd.DataFrame(info_list, columns=column)
-                info_df.to_csv('../csv/info_df.csv', index=False)
-
-                count_game += 1
-                end_action(end_flag)
-                break

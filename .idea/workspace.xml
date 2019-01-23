@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="40f28342-fb7d-4a0b-8d2d-b0783404e549" name="Default" comment="execute from pycharm">
+      <change afterPath="$PROJECT_DIR$/.idea/00_DeepGamingAI_Tennis.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI_12-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI_20180101_02_backup-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI_reward-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/gym_test-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/image_preprocess-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/image_preprocess_ocr-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/image_preprocess_temp_matching-checkpoint.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/movie_generation-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_adv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/tennis_save.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/score_reward_20190113.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tennis_AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tennis_AI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tennis_observation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tennis_observation.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_AI_jupyter.coverage" NAME="Tennis_AI_jupyter Coverage Results" MODIFIED="1546680713703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_AI.coverage" NAME="Tennis_AI Coverage Results" MODIFIED="1548250747080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$run.coverage" NAME="run Coverage Results" MODIFIED="1546316277251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_action.coverage" NAME="Tennis_action Coverage Results" MODIFIED="1547308104846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_AI__1_.coverage" NAME="Tennis_AI (1) Coverage Results" MODIFIED="1547454929348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Tennis_AI.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="493" column="11" lean-forward="true" selection-start-line="493" selection-start-column="11" selection-end-line="493" selection-end-column="11" />
+              <folding>
+                <element signature="e#10#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tennis_observation.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tennis_observation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="71" column="7" selection-start-line="71" selection-end-line="71" selection-end-column="7" />
+              <folding>
+                <element signature="e#8#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tennis_action.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+              <folding>
+                <element signature="e#216#229#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>./</find>
+      <find>gray_frag</find>
+      <find>replay_mem_size</find>
+      <find>batch_si</find>
+      <find>i_match</find>
+      <find>img_temp_list</find>
+      <find>append</find>
+      <find>update_target_frequency</find>
+      <find>save</find>
+      <find>save_model_frequency</find>
+      <find>frame</find>
+      <find>frames_to</find>
+      <find>calculate</find>
+      <find>np.where</find>
+      <find>last_score</find>
+      <find>score_reward</find>
+      <find>score_value_list</find>
+      <find>count_match</find>
+      <find>server_flag</find>
+      <find>init_flag</find>
+      <find>score_reward_dict</find>
+      <find>reward</find>
+      <find>save_mode</find>
+      <find>number</find>
+      <find>number_of_fra</find>
+      <find>file2</find>
+      <find>count_ma</find>
+      <find>csv</find>
+      <find>thre</find>
+      <find>thresho</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/displaycontroller.py" />
+        <option value="$PROJECT_DIR$/ExperienceReplay.py" />
+        <option value="$PROJECT_DIR$/main_backup.py" />
+        <option value="$PROJECT_DIR$/plot_wins.py" />
+        <option value="$PROJECT_DIR$/FIFA.py" />
+        <option value="$PROJECT_DIR$/rom/grabscreen.py" />
+        <option value="$PROJECT_DIR$/rom/game_img_comverter.py" />
+        <option value="$PROJECT_DIR$/train.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/TennisVideoOutput.py" />
+        <option value="$PROJECT_DIR$/strage.py" />
+        <option value="$PROJECT_DIR$/score_check.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/test.ipynb" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/CNN.py" />
+        <option value="$PROJECT_DIR$/grabscreen.py" />
+        <option value="$PROJECT_DIR$/directkeys.py" />
+        <option value="$PROJECT_DIR$/action.py" />
+        <option value="$PROJECT_DIR$/aaa.py" />
+        <option value="$PROJECT_DIR$/Tennis.py" />
+        <option value="$PROJECT_DIR$/Tennis_AI_jup.py" />
+        <option value="$PROJECT_DIR$/Tennis_AI.py" />
+        <option value="$PROJECT_DIR$/grab.py" />
+        <option value="$PROJECT_DIR$/grab_screen.py" />
+        <option value="$PROJECT_DIR$/Tennis_AI_jupyter.py" />
+        <option value="$PROJECT_DIR$/score_observation.py" />
+        <option value="$PROJECT_DIR$/window_controlle.py" />
+        <option value="$PROJECT_DIR$/Tennis_observation.py" />
+        <option value="$PROJECT_DIR$/Tennis_action.py" />
+        <option value="$PROJECT_DIR$/Tennis_reward.py" />
+        <option value="$PROJECT_DIR$/Tennis_AI.ipynb" />
+        <option value="$PROJECT_DIR$/Tennis_AI (1).py" />
+        <option value="$PROJECT_DIR$/src/window_controlle.py" />
+        <option value="$PROJECT_DIR$/src/Tennis_action.py" />
+        <option value="$PROJECT_DIR$/src/Tennis_observation.py" />
+        <option value="$PROJECT_DIR$/src/Tennis_AI.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1167" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="00_DeepGamingAI_Tennis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_DeepGamingAI_Tennis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="00_DeepGamingAI_Tennis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="00_DeepGamingAI_Tennis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../02_Reinforcement Learning with Pytorch/RL" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Chintan\PycharmProjects\DeepGamingAI_FIFARL" />
+      <recent name="C:\Users\Chintan Trivedi\PycharmProjects\DeepGamingAI_FIFARL" />
+      <recent name="C:\Users\Chintan\PycharmProjects\FIFA_RL" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yuya\Desktop\DeepGamingAI_Tennis" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.Tennis_AI">
+    <configuration name="Tennis_AI (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="00_DeepGamingAI_Tennis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tennis_AI (1).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Tennis_AI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="00_DeepGamingAI_Tennis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Tennis_AI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Tennis_AI_jupyter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="00_DeepGamingAI_Tennis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tennis_AI_jupyter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Tennis_action" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="00_DeepGamingAI_Tennis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tennis_action.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Tennis_observation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="00_DeepGamingAI_Tennis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Tennis_observation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.Tennis_AI_jupyter" />
+      <item itemvalue="Python.Tennis_action" />
+      <item itemvalue="Python.Tennis_AI (1)" />
+      <item itemvalue="Python.Tennis_AI" />
+      <item itemvalue="Python.Tennis_observation" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Tennis_AI" />
+        <item itemvalue="Python.Tennis_observation" />
+        <item itemvalue="Python.Tennis_AI (1)" />
+        <item itemvalue="Python.Tennis_action" />
+        <item itemvalue="Python.Tennis_AI_jupyter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40f28342-fb7d-4a0b-8d2d-b0783404e549" name="Default" comment="" />
+      <created>1525522442312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525522442312</updated>
+    </task>
+    <task id="LOCAL-00001" summary="TEST">
+      <created>1544928358972</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1544928358973</updated>
+    </task>
+    <task id="LOCAL-00002" summary="work properly">
+      <created>1547036367737</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547036367737</updated>
+    </task>
+    <task id="LOCAL-00003" summary="reward part from observation">
+      <created>1547300828986</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1547300828986</updated>
+    </task>
+    <task id="LOCAL-00004" summary="execute from pycharm">
+      <created>1547454460700</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1547454460700</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change directory">
+      <created>1547454827863</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1547454827863</updated>
+    </task>
+    <task id="LOCAL-00006" summary="clean files">
+      <created>1547455226856</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1547455226856</updated>
+    </task>
+    <task id="LOCAL-00007" summary="execute from pycharm">
+      <created>1547461807256</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1547461807256</updated>
+    </task>
+    <task id="LOCAL-00008" summary="data extract to csv">
+      <created>1547974366808</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1547974366808</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="974" height="1167" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.104575165" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3468426" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.4287072" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32889733" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.5640599" weight="0.282881" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info x="740" y="181" width="440" height="798" id="Structure" order="3" sideWeight="0.4359401" side_tool="true" weight="0.282881" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="aws.explorer" order="0" sideWeight="0.5012531" side_tool="true" weight="0.20916754" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="434" height="976" id="Documentation" order="5" side_tool="true" weight="0.7442589" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.4287072" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.5640599" visible="true" weight="0.282881" />
+      <window_info x="740" y="181" width="440" height="798" id="Structure" order="3" sideWeight="0.4359401" side_tool="true" visible="true" weight="0.282881" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.104575165" />
+      <window_info id="aws.explorer" order="0" sideWeight="0.5012531" side_tool="true" weight="0.20916754" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+      <window_info anchor="right" x="0" y="0" width="434" height="976" id="Documentation" order="5" side_tool="true" weight="0.7442589" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32889733" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3468426" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="TEST" />
+    <MESSAGE value="work properly" />
+    <MESSAGE value="reward part from observation" />
+    <MESSAGE value="change directory" />
+    <MESSAGE value="clean files" />
+    <MESSAGE value="execute from pycharm" />
+    <MESSAGE value="data extract to csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="data extract to csv" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+          <folding>
+            <element signature="e#216#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6443">
+          <caret line="379" column="17" selection-start-line="379" selection-start-column="17" selection-end-line="379" selection-end-column="17" />
+          <folding>
+            <element signature="e#10#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+          <folding>
+            <element signature="e#216#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="123" column="1" selection-start-line="123" selection-start-column="1" selection-end-line="123" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="93" column="27" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
+          <folding>
+            <element signature="e#216#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6205">
+          <caret line="365" column="8" selection-start-line="365" selection-start-column="8" selection-end-line="365" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="126" column="19" lean-forward="true" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
+          <folding>
+            <element signature="e#216#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8092">
+          <caret line="476" column="29" lean-forward="true" selection-start-line="476" selection-start-column="29" selection-end-line="476" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_observation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3723">
+          <caret line="219" column="23" selection-start-line="219" selection-start-column="23" selection-end-line="219" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8942">
+          <caret line="526" selection-start-line="526" selection-end-line="526" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/label_map_util.py" />
+    <entry file="file://$PROJECT_DIR$/plot_wins.py" />
+    <entry file="file://$PROJECT_DIR$/displaycontroller.py" />
+    <entry file="file://$PROJECT_DIR$/grabscreencoordinates.py" />
+    <entry file="file://$PROJECT_DIR$/ExperienceReplay.py" />
+    <entry file="file://$PROJECT_DIR$/FIFA.py" />
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.3/system/python_stubs/1171682330/_ctypes.py" />
+    <entry file="file://$PROJECT_DIR$/rom/grabscreen.py" />
+    <entry file="file://$PROJECT_DIR$/rom/game_img_comverter.py" />
+    <entry file="file://$USER_HOME$/Anaconda3/envs/python36/Lib/site-packages/pytesseract/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/train.py" />
+    <entry file="file://$PROJECT_DIR$/rl24-PongVideoOutput.py" />
+    <entry file="file://$PROJECT_DIR$/atari_wrappers.py" />
+    <entry file="file://$PROJECT_DIR$/main.py" />
+    <entry file="file://$PROJECT_DIR$/strage.py" />
+    <entry file="file://$PROJECT_DIR$/TennisRandom.py" />
+    <entry file="file://$PROJECT_DIR$/TennisVideoOutput.py" />
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-1100540205/win32ui.py" />
+    <entry file="file://$PROJECT_DIR$/run.py" />
+    <entry file="file://$PROJECT_DIR$/score_check.py" />
+    <entry file="file://$PROJECT_DIR$/Tennis_AI_jup.py" />
+    <entry file="file://$PROJECT_DIR$/aaa.py" />
+    <entry file="file://$PROJECT_DIR$/grab.py" />
+    <entry file="file://$PROJECT_DIR$/grab_screen_.py" />
+    <entry file="file://$PROJECT_DIR$/Tennis_AI_jupyter.py" />
+    <entry file="file://$PROJECT_DIR$/movie_generation.ipynb" />
+    <entry file="file://$PROJECT_DIR$/image_preprocess_temp_matching.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Tennis_observation.py" />
+    <entry file="file://$PROJECT_DIR$/Tennis_reward.py" />
+    <entry file="file://$PROJECT_DIR$/Tennis_AI.py" />
+    <entry file="file://$PROJECT_DIR$/Tennis_AI (1).py" />
+    <entry file="file://$PROJECT_DIR$/Tennis_action.py" />
+    <entry file="file://$PROJECT_DIR$/window_controlle.py" />
+    <entry file="file://$PROJECT_DIR$/Tennis_AI.ipynb" />
+    <entry file="file://$PROJECT_DIR$/src/Tennis_reward.py" />
+    <entry file="file://$PROJECT_DIR$/src/Tennis_AI.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/window_controlle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+          <folding>
+            <element signature="e#216#229#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_observation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="71" column="7" selection-start-line="71" selection-end-line="71" selection-end-column="7" />
+          <folding>
+            <element signature="e#8#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="493" column="11" lean-forward="true" selection-start-line="493" selection-start-column="11" selection-end-line="493" selection-end-column="11" />
+          <folding>
+            <element signature="e#10#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
