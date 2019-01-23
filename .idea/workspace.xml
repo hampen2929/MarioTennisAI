@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40f28342-fb7d-4a0b-8d2d-b0783404e549" name="Default" comment="execute from pycharm">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/.ipynb_checkpoints/game_reward-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/.ipynb_checkpoints/game_reward-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/game_reward.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/game_reward.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/first_serve_temp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized/score_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized/score_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized/score_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized/score_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized/score_adv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_adv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/first_serve.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_Adv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/tennis_save_0000.pth" beforeDir="false" afterPath="$PROJECT_DIR$/model/tennis_save_0000.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/tennis_save_0005.pth" beforeDir="false" afterPath="$PROJECT_DIR$/model/tennis_save_0005.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/tennis_save_0010.pth" beforeDir="false" afterPath="$PROJECT_DIR$/model/tennis_save_0010.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/game_score_0001.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0001.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/game_score_0002.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0002.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/game_score_0003.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0003.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/game_score_0004.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0004.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/game_score_0005.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0005.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/game_score_0006.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0006.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/game_score_0007.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0007.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/strage/score.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/strage/score_reward_20190113.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/strage/score_reward_20190115.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tennis_AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tennis_AI.py" afterDir="false" />
-    </list>
+    <list default="true" id="40f28342-fb7d-4a0b-8d2d-b0783404e549" name="Default" comment="execute from pycharm" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +21,8 @@
       <file leaf-file-name="Tennis_AI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="279" column="62" selection-start-line="279" selection-start-column="62" selection-end-line="279" selection-end-column="62" />
+            <state relative-caret-position="-697">
+              <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
               <folding>
                 <element signature="e#10#42#0" expanded="true" />
               </folding>
@@ -450,7 +411,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.104575165" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -678,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="279" column="62" selection-start-line="279" selection-start-column="62" selection-end-line="279" selection-end-column="62" />
+        <state relative-caret-position="-697">
+          <caret line="256" lean-forward="true" selection-start-line="256" selection-end-line="256" />
           <folding>
             <element signature="e#10#42#0" expanded="true" />
           </folding>
