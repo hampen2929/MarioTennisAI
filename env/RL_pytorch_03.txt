@@ -1,0 +1,9 @@
+pip install notebook==5.7.0
+conda install -y -c conda-forge jupyter_contrib_nbextensions
+pip install matplotlib
+pip install opencv-python
+pip install pywin32
+pip install pillow
+pip install pyautogui
+pip install https://download.pytorch.org/whl/cu90/torch-1.0.0-cp36-cp36m-win_amd64.whl
+

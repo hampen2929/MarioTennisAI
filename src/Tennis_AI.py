@@ -13,7 +13,6 @@ import random
 import matplotlib.pyplot as plt
 from threading import Thread
 import cv2
-import csv
 
 
 # ゲームの位置とサイズ調整
@@ -103,6 +102,7 @@ batch_size = 32
 
 update_target_frequency = 5
 
+
 double_dqn = False
 
 egreedy = 0.9
@@ -114,7 +114,7 @@ score_to_solve = 18
 
 clip_error = True
 normalize_image = True
-save_model_frequency = 5
+save_model_frequency = 50
 resume_previous_training = False
 
 position = 0
@@ -317,6 +317,7 @@ class QNet_Agent(object):
         if self.number_of_games % update_target_frequency == 0:
             self.target_nn.load_state_dict(self.nn.state_dict())
 
+        if self.number_of_games % save_model_frequency == 0:
             file2save = '../model/tennis_save_{0:04d}.pth'.format(self.number_of_games)
             save_model(self.nn, file2save)
 
@@ -356,7 +357,7 @@ def get_score(my_score, enemy_score, reward, game_end_flag):
                 else:
 
                     info_df = pd.DataFrame(info_list, columns=column)
-                    info_df.to_excel('../data/info_df.xlsx', index=False)
+                    info_df.to_csv('../data/info_df.csv', index=False)
 
                     count_game += 1
 

@@ -2,29 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40f28342-fb7d-4a0b-8d2d-b0783404e549" name="Default" comment="execute from pycharm">
-      <change afterPath="$PROJECT_DIR$/.idea/00_DeepGamingAI_Tennis.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI_12-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI_20180101_02_backup-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Tennis_AI_reward-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/gym_test-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/image_preprocess-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/image_preprocess_ocr-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/image_preprocess_temp_matching-checkpoint.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.ipynb_checkpoints/movie_generation-checkpoint.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/score_template/img_temp_adv.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/tennis_save.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/score_reward_20190113.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/.ipynb_checkpoints/game_reward-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/.ipynb_checkpoints/game_reward-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/game_reward.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/data/game_reward.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/first_serve_temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized/score_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized/score_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized/score_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized/score_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized/score_adv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/resized_gray_scale/score_adv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/first_serve.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_left_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/score_raw/image_right_Adv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/tennis_save_0000.pth" beforeDir="false" afterPath="$PROJECT_DIR$/model/tennis_save_0000.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/tennis_save_0005.pth" beforeDir="false" afterPath="$PROJECT_DIR$/model/tennis_save_0005.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/tennis_save_0010.pth" beforeDir="false" afterPath="$PROJECT_DIR$/model/tennis_save_0010.pth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/game_score_0001.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/game_score_0002.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0002.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/game_score_0003.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0003.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/game_score_0004.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0004.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/game_score_0005.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0005.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/game_score_0006.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0006.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/game_score_0007.png" beforeDir="false" afterPath="$PROJECT_DIR$/score/game_score_0007.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/strage/score.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/strage/score_reward_20190113.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/strage/score_reward_20190115.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tennis_AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tennis_AI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tennis_observation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tennis_observation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,7 +50,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_AI_jupyter.coverage" NAME="Tennis_AI_jupyter Coverage Results" MODIFIED="1546680713703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_AI.coverage" NAME="Tennis_AI Coverage Results" MODIFIED="1548250747080" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_AI.coverage" NAME="Tennis_AI Coverage Results" MODIFIED="1548253030762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$run.coverage" NAME="run Coverage Results" MODIFIED="1546316277251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_action.coverage" NAME="Tennis_action Coverage Results" MODIFIED="1547308104846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/00_DeepGamingAI_Tennis$Tennis_AI__1_.coverage" NAME="Tennis_AI (1) Coverage Results" MODIFIED="1547454929348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -45,8 +60,8 @@
       <file leaf-file-name="Tennis_AI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="493" column="11" lean-forward="true" selection-start-line="493" selection-start-column="11" selection-end-line="493" selection-end-column="11" />
+            <state relative-caret-position="408">
+              <caret line="279" column="62" selection-start-line="279" selection-start-column="62" selection-end-line="279" selection-end-column="62" />
               <folding>
                 <element signature="e#10#42#0" expanded="true" />
               </folding>
@@ -57,7 +72,7 @@
       <file leaf-file-name="Tennis_observation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tennis_observation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
+            <state relative-caret-position="1122">
               <caret line="71" column="7" selection-start-line="71" selection-end-line="71" selection-end-column="7" />
               <folding>
                 <element signature="e#8#17#0" expanded="true" />
@@ -69,7 +84,7 @@
       <file leaf-file-name="Tennis_action.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="1445">
               <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
               <folding>
                 <element signature="e#216#229#0" expanded="true" />
@@ -177,7 +192,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1167" />
@@ -190,7 +205,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,6 +221,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,7 +449,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1167" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.104575165" />
@@ -442,9 +457,9 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3468426" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.4287072" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.3449576" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32889733" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.5640599" weight="0.282881" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.5640599" visible="true" weight="0.2828125" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -459,32 +474,32 @@
       <window_info anchor="right" x="0" y="0" width="434" height="976" id="Documentation" order="5" side_tool="true" weight="0.7442589" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32893497" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.4287072" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info content_ui="combo" id="Project" order="1" sideWeight="0.5640599" visible="true" weight="0.282881" />
       <window_info x="740" y="181" width="440" height="798" id="Structure" order="3" sideWeight="0.4359401" side_tool="true" visible="true" weight="0.282881" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.104575165" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info id="aws.explorer" order="0" sideWeight="0.5012531" side_tool="true" weight="0.20916754" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3468426" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
       <window_info anchor="right" x="0" y="0" width="434" height="976" id="Documentation" order="5" side_tool="true" weight="0.7442589" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32889733" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.4287072" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3468426" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32889733" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +520,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -523,9 +538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6443">
           <caret line="379" column="17" selection-start-line="379" selection-start-column="17" selection-end-line="379" selection-end-column="17" />
-          <folding>
-            <element signature="e#10#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -646,7 +658,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tennis_action.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state relative-caret-position="1445">
           <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
           <folding>
             <element signature="e#216#229#0" expanded="true" />
@@ -656,7 +668,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tennis_observation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
+        <state relative-caret-position="1122">
           <caret line="71" column="7" selection-start-line="71" selection-end-line="71" selection-end-column="7" />
           <folding>
             <element signature="e#8#17#0" expanded="true" />
@@ -666,8 +678,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Tennis_AI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="493" column="11" lean-forward="true" selection-start-line="493" selection-start-column="11" selection-end-line="493" selection-end-column="11" />
+        <state relative-caret-position="408">
+          <caret line="279" column="62" selection-start-line="279" selection-start-column="62" selection-end-line="279" selection-end-column="62" />
           <folding>
             <element signature="e#10#42#0" expanded="true" />
           </folding>
