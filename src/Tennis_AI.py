@@ -316,6 +316,7 @@ class QNet_Agent(object):
 
         if self.number_of_games % update_target_frequency == 0:
             self.target_nn.load_state_dict(self.nn.state_dict())
+            print('model updated')
 
         if self.number_of_games % save_model_frequency == 0:
             file2save = '../model/tennis_save_{0:04d}.pth'.format(self.number_of_games)
@@ -338,9 +339,8 @@ def get_score(my_score, enemy_score, reward, game_end_flag):
             print('score:', str(score))
             #print('server', server_flag['flag'])
 
-            reward['reward'] = score_reward_dict[score[0]] - score_reward_dict[score[1]]
-            print('reward: ', reward['reward'])
-
+            #reward['reward'] = score_reward_dict[score[0]] - score_reward_dict[score[1]]
+            #print('reward: ', reward['reward'])
 
             my_init_judge = (score_reward_dict[score[0]] - score_reward_dict[last_score[0]])
             enemy_init_judge = (score_reward_dict[score[1]] - score_reward_dict[last_score[1]])
@@ -350,11 +350,13 @@ def get_score(my_score, enemy_score, reward, game_end_flag):
             if (score == init_flag) | (((my_init_judge < 0) | (enemy_init_judge < 0)) & (15 in score)):
                 # 1ゲーム目の0-0は報酬計算対象外
                 if count_game == 0:
-                    reward['reward'] = 0
-                    count_game += 1
+                    reward['reward'] = -3
+                    count_game += 10
 
                 # 2ゲーム目以降
                 else:
+                    reward['reward'] = score_reward_dict[last_score[0]] - score_reward_dict[last_score[1]]
+                    print('reward: ', reward['reward'])
 
                     info_df = pd.DataFrame(info_list, columns=column)
                     info_df.to_csv('../data/info_df.csv', index=False)
@@ -431,7 +433,6 @@ def server_judge(server_flag, img_server_mario, img_server_luigi):
 frame_current = {'frame':grab_screen(left, top, width, height, False)}
 stop_flag = {'flag':False}
 
-
 frame_current = {'frame':grab_screen(left, top, width, height, False)}
 t1 = Thread(target=observation, args=(left, top, width, height, frame_current, stop_flag))
 t1.start()
@@ -442,7 +443,6 @@ enemy_score = {'score':0}
 game_end_flag = {'flag':False}
 count_match = {'score':1}
 reward = {'reward':0}
-
 
 t2 = Thread(target=get_score, args=(my_score, enemy_score, reward, game_end_flag))
 t2.start()
@@ -498,14 +498,14 @@ while True:
 
     #行動決定
     action = qnet_agent.select_action(state, epsilon)
-
     #行動
     take_action(action)
 
-    #新しい環境
+    #新しい環境の観測
     state = copy.copy(new_state)
     new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
 
+    #スコア取得
     score = (str(my_score['score']), str(enemy_score['score']))
 
     #ExperienceMemory
