@@ -114,7 +114,7 @@ score_to_solve = 18
 
 clip_error = True
 normalize_image = True
-save_model_frequency = 50
+save_model_frequency = 100
 resume_previous_training = False
 
 position = 0
@@ -287,7 +287,6 @@ class QNet_Agent(object):
         action = LongTensor(action).to(device)
         done = Tensor(done).to(device)
 
-
         if double_dqn:
             new_state_indexes = self.nn(new_state).detach()
             max_new_state_indexes = torch.max(new_state_indexes, 1)[1]
@@ -336,8 +335,9 @@ def get_score(my_score, enemy_score, reward, game_end_flag):
         
         #ポイント取得
         if (score != last_score) & (np.nan not in score):
+
             print('score:', str(score))
-            #print('server', server_flag['flag'])
+            print('server', server_flag['flag'])
 
             #reward['reward'] = score_reward_dict[score[0]] - score_reward_dict[score[1]]
             #print('reward: ', reward['reward'])
@@ -357,10 +357,6 @@ def get_score(my_score, enemy_score, reward, game_end_flag):
                 else:
                     reward['reward'] = score_reward_dict[last_score[0]] - score_reward_dict[last_score[1]]
                     print('reward: ', reward['reward'])
-
-                    info_df = pd.DataFrame(info_list, columns=column)
-                    info_df.to_csv('../data/info_df.csv', index=False)
-
                     count_game += 1
 
                     my_score['score'] = score[0]
@@ -370,6 +366,9 @@ def get_score(my_score, enemy_score, reward, game_end_flag):
 
             info = [count_match['score'], server_flag['flag'], count_game, score, reward['reward']]
             info_list.append(info)
+
+            info_df = pd.DataFrame(info_list, columns=column)
+            info_df.to_csv('../data/CSV/info_df.csv', index=False)
 
             last_score = copy.copy(score)
 
@@ -391,6 +390,9 @@ def end_action(end_flag, count_match):
 
     cv2.imwrite('../score/game_score_{0:04d}.png'.format(count_match['score']), frame_current['frame'])
 
+    #stop record
+    record()
+
     PressKey(A)
     time.sleep(0.2)
     ReleaseKey(A)
@@ -409,6 +411,8 @@ def end_action(end_flag, count_match):
 
     end_flag['flag'] = False
 
+    # restart record
+    record()
 
 def server_judge(server_flag, img_server_mario, img_server_luigi):
     while True:
@@ -443,6 +447,8 @@ enemy_score = {'score':0}
 game_end_flag = {'flag':False}
 count_match = {'score':1}
 reward = {'reward':0}
+column = ['match', 'server', 'game', 'score', 'reward']
+server_flag = {'flag':1}
 
 t2 = Thread(target=get_score, args=(my_score, enemy_score, reward, game_end_flag))
 t2.start()
@@ -453,7 +459,6 @@ t3 = Thread(target=end_judge, args=(end_flag, True))
 t3.start()
 
 #server_flag
-server_flag = {'flag':1}
 t4 = Thread(target=server_judge, args=(server_flag, img_server_mario, img_server_luigi))
 t4.start()
 
@@ -484,7 +489,7 @@ num_match = 100
 num_game = 1000
 
 info_list = []
-column = ['match', 'server', 'game', 'score', 'reward']
+
 
 count_game = 0
 
@@ -492,6 +497,8 @@ new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
 state = new_state
 
 # 1ゲーム終わるまで継続
+print('match: ', count_match['score'])
+record()
 while True:
     frames_total += 1
     epsilon = calculate_epsilon(frames_total)
@@ -524,6 +531,8 @@ while True:
         count_match['score'] = count_match['score'] + 1
 
         end_flag['flag'] == False
+
+        print('match: ', count_match['score'])
 
 
 

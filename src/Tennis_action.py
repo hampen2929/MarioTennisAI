@@ -24,6 +24,9 @@ noshot = 0x0A # 9: noshot
 
 F = 0x21 # advanced frame
 
+Left_alt = 0x38
+f9 = 0x43
+
 # keys list
 
 keys_move_to_press = [leftarrow, rightarrow, stay]
@@ -117,4 +120,13 @@ def take_action(action):
     time.sleep(0.2)
     ReleaseKey(actions[1])  # shot
 
+def record():
+    print('record')
+    # ボタン選択
+    PressKey(Left_alt)
+    PressKey(f9)
 
+    time.sleep(0.3)
+
+    ReleaseKey(Left_alt)
+    ReleaseKey(f9)
