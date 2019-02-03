@@ -116,6 +116,7 @@ clip_error = True
 normalize_image = True
 save_model_frequency = 100
 resume_previous_training = False
+record_flag = True
 
 position = 0
 capacity = 4
@@ -269,7 +270,7 @@ class QNet_Agent(object):
 
         return action
 
-    def optimize(self):
+    def optimize(self, memory):
         print('optimize')
 
         if (len(memory) < batch_size):
@@ -332,7 +333,7 @@ def get_score(my_score, enemy_score, reward, game_end_flag):
     #ゲーム開始
     while True:
         score = score_check(frame_current['frame'])
-        
+
         #ポイント取得
         if (score != last_score) & (np.nan not in score):
 
@@ -384,14 +385,13 @@ def end_judge(end_flag, _):
         if len(loc[0]) > 0:
             end_flag['flag'] = True
 
-def end_action(end_flag, count_match):
+def end_action(end_flag, count_match, record_flag):
     print('end game and next!')
     time.sleep(10)
 
     cv2.imwrite('../score/game_score_{0:04d}.png'.format(count_match['score']), frame_current['frame'])
 
-    #stop record
-    record()
+
 
     PressKey(A)
     time.sleep(0.2)
@@ -411,8 +411,15 @@ def end_action(end_flag, count_match):
 
     end_flag['flag'] = False
 
-    # restart record
-    record()
+    #record
+    if record_flag == True:
+        # stop record
+        record()
+
+        time.sleep(1)
+
+        # restart record
+        record()
 
 def server_judge(server_flag, img_server_mario, img_server_luigi):
     while True:
@@ -470,9 +477,6 @@ t4.start()
 
 # 学習
 
-memory = ExperienceReplay(replay_mem_size)
-qnet_agent = QNet_Agent()
-
 reward_list = []
 score_list = []
 
@@ -493,18 +497,33 @@ info_list = []
 
 count_game = 0
 
+#サーブ時
+memory_server = ExperienceReplay(replay_mem_size)
+qnet_agent_server = QNet_Agent()
+
+#レシーブ時
+memory_receiver = ExperienceReplay(replay_mem_size)
+qnet_agent_receiver = QNet_Agent()
+
 new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
 state = new_state
 
 # 1ゲーム終わるまで継続
 print('match: ', count_match['score'])
-record()
+
+if record_flag == True:
+    record()
+
 while True:
     frames_total += 1
     epsilon = calculate_epsilon(frames_total)
 
     #行動決定
-    action = qnet_agent.select_action(state, epsilon)
+    if server_flag['flag'] == 1:
+        action = qnet_agent_server.select_action(state, epsilon)
+    else:
+        action = qnet_agent_receiver.select_action(state, epsilon)
+
     #行動
     take_action(action)
 
@@ -516,21 +535,36 @@ while True:
     score = (str(my_score['score']), str(enemy_score['score']))
 
     #ExperienceMemory
-    memory.push(state, action, new_state, reward['reward'], server_flag['flag'])
+    if server_flag['flag'] == 1:
+        memory_server.push(state, action, new_state, reward['reward'], server_flag['flag'])
+    else:
+        memory_receiver.push(state, action, new_state, reward['reward'], server_flag['flag'])
 
     #ゲーム終了
     if game_end_flag['flag'] == True:
+
         # 最適化
-        qnet_agent.optimize()
+        if server_flag['flag'] == 1:
+            qnet_agent_server.optimize(memory_server)
+        else:
+            qnet_agent_receiver.optimize(memory_receiver)
+
         game_end_flag['flag'] = False
 
     #試合終了
     if end_flag['flag'] == True:
 
-        end_action(end_flag, count_match)
+        end_action(end_flag, count_match, record_flag)
         count_match['score'] = count_match['score'] + 1
 
         end_flag['flag'] == False
+
+        #save model
+        file2save_server = '../model/model_{0:04d}_server.pth'.format(count_match['score'])
+        file2save_receiver = '../model/model_{0:04d}_receiver.pth'.format(count_match['score'])
+
+        save_model(qnet_agent_server.nn, file2save_server)
+        save_model(qnet_agent_receiver.nn, file2save_receiver)
 
         print('match: ', count_match['score'])
 
