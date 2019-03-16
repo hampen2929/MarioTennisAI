@@ -30,4 +30,5 @@ Commentary videos are uploaded to Youtube.
 
 ## Article
 http://hampen2929.com/mario-tenni-ai/825
-The article explains in more detail.
+
+This article explains in more detail.
