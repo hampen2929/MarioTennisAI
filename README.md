@@ -1,7 +1,8 @@
 # MarioTenniAI
 ![Tennis AI](https://user-images.githubusercontent.com/34574033/54472192-ee360780-4807-11e9-8d25-bd419e0e328b.PNG)
 
-Generated MarioTennnis model based on Reinforcement learning.
+MarioTennnis model was generated based on Reinforcement learning.
+Mario runs on a reinforcement learning model, eventually grew to win Luigi.
 
 ## Requirements
 Tested on: Windows10
@@ -19,7 +20,7 @@ Tested on: Windows10
 3. Run the proggram.
 
 ```bash
-cd ./src/ 
+cd ./src
 python Tennis_AI_noramal
 ```
 
