@@ -1,7 +1,8 @@
-# MarioTenniAI
+# MarioTennisAI
 ![Tennis AI](https://user-images.githubusercontent.com/34574033/54472192-ee360780-4807-11e9-8d25-bd419e0e328b.PNG)
 
-Generated MarioTennnis model based on Reinforcement learning.
+MarioTennnis model was generated based on Reinforcement learning.
+Mario runs on a reinforcement learning model, eventually grew to win Luigi.
 
 ## Requirements
 Tested on: Windows10
@@ -12,9 +13,15 @@ Tested on: Windows10
 
 ## Train
 
+
+1. Launch MarioTennis on dolphin emulator.
+2. Set windows looks lile the image.
+![work_image](https://user-images.githubusercontent.com/34574033/54476268-9ebefe00-483e-11e9-97db-3bc0995942ab.PNG)
+3. Run the proggram.
+
 ```bash
-cd ./src/ 
-python Tennis_AI
+cd ./src
+python Tennis_AI_noramal
 ```
 
 ## Evaluation
@@ -22,6 +29,10 @@ python Tennis_AI
 
 You can see that as the number of games increases, the rewards for serving games also increase.
 However, in return games, the rewards are decreasing rather than increasing.
+
+![reward_pie_-768x388](https://user-images.githubusercontent.com/34574033/54476201-f7da6200-483d-11e9-957a-4ae5e38fa666.png)
+
+The breakdown of points is as above. 
 
 ## Play
 Inference mode hasn't implemented, yet.
