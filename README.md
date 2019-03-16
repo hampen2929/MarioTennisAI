@@ -4,10 +4,8 @@ Generated MarioTennnis model based on Reinforcement learning.
 
 ## Requirements
 Tested on: Windows10
-1. The dolphin emulator. You can download from here(https://ja.dolphin-emu.org/download/). Stable version is better.
+1. The dolphin emulator. You can download from [here](https://ja.dolphin-emu.org/download/). Stable version is better.
 2. The Mario Power Tennis iso image.
 3. Python 3. On Windows, you can use [Anaconda](https://www.anaconda.com/distribution/).
 
-## Dependency
- 
 
