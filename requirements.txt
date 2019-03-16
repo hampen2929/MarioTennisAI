@@ -1,0 +1,13 @@
+pip install matplotlib==3.0.2
+pip install opencv-python==3.4.5.20
+pip install pywin32==224
+pip install pillow==5.4.0
+pip install pyautogui==0.9.39
+pip install https://download.pytorch.org/whl/cu90/torch-1.0.0-cp36-cp36m-win_amd64.whl
+pip install notebook==5.7.0
+pip uninstall tornado
+pip install tornado==5.1.1
+pip install jupyter_contrib_nbextensions
+pip install pandas==0.23.2
+jupyter contrib nbextension install --user
+jupyter nbextension enable codefolding/main
