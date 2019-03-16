@@ -10,6 +10,6 @@ Tested on: Windows10
 
 ## train
 ```bash
-cd ./src/Tennis_AI # future commands should be run from here
+cd ./src/ 
 python Tennis_AI
 ```
