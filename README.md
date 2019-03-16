@@ -1,6 +1,5 @@
 # MarioTennisAI
-![test2](https://user-images.githubusercontent.com/34574033/54476855-29a2f700-4845-11e9-8425-2d17beebb860.gif)
-
+![test4](https://user-images.githubusercontent.com/34574033/54477224-3cb7c600-4849-11e9-8ce6-5398fbefddf7.gif)
 
 MarioTennnis model was generated based on Reinforcement learning.
 Mario runs on a reinforcement learning model, eventually grew to win Luigi.
