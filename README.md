@@ -12,6 +12,12 @@ Tested on: Windows10
 
 ## Train
 
+
+1. Launch MarioTennis on dolphin emulator.
+2. Set windows looks lile the image.
+![work_image](https://user-images.githubusercontent.com/34574033/54476268-9ebefe00-483e-11e9-97db-3bc0995942ab.PNG)
+3. Run the proggram.
+
 ```bash
 cd ./src/ 
 python Tennis_AI_noramal
