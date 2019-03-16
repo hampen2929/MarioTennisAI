@@ -14,7 +14,7 @@ Tested on: Windows10
 
 ```bash
 cd ./src/ 
-python Tennis_AI
+python Tennis_AI_noramal
 ```
 
 ## Evaluation
@@ -22,6 +22,9 @@ python Tennis_AI
 
 You can see that as the number of games increases, the rewards for serving games also increase.
 However, in return games, the rewards are decreasing rather than increasing.
+
+![reward_pie_-768x388](https://user-images.githubusercontent.com/34574033/54476201-f7da6200-483d-11e9-957a-4ae5e38fa666.png)
+The breakdown of points is as above. 
 
 ## Play
 Inference mode hasn't implemented, yet.
