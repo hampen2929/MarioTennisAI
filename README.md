@@ -1,4 +1,4 @@
-# Tennis AI for Mario
+# MarioTennisAI
 ![test4](https://user-images.githubusercontent.com/34574033/54477224-3cb7c600-4849-11e9-8ce6-5398fbefddf7.gif)
 
 MarioTennnis model was generated based on Reinforcement learning.
