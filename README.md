@@ -13,3 +13,5 @@ Tested on: Windows10
 cd ./src/ 
 python Tennis_AI
 ```
+## play
+Inference mode hasn't implemented, yet.
