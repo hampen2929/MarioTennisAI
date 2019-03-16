@@ -8,4 +8,8 @@ Tested on: Windows10
 2. The Mario Power Tennis iso image.
 3. Python 3. On Windows, you can use [Anaconda](https://www.anaconda.com/distribution/).
 
-
+## train
+```bash
+cd ./src/Tennis_AI # future commands should be run from here
+python Tennis_AI
+```
