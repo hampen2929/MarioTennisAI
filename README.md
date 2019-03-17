@@ -21,7 +21,7 @@ Tested on: Windows10
 
 ```bash
 cd ./src
-python Tennis_AI_noramal
+python Tennis_AI_normal
 ```
 
 ## Evaluation
