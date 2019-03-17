@@ -7,8 +7,7 @@ Mario runs on a reinforcement learning model, eventually grew to win Luigi.
 ## Requirements
 Tested on as below.
 
-OS:Windows10
-
+*OS:Windows10
 CPU:core i5-2400
 
 GPU:GTX-1060
