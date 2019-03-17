@@ -9,6 +9,8 @@ Tested PC spec is as below.
 
 OS:Windows10, CPU:core i5-2400, GPU:GTX-1060, Memory:16GB
 
+## Initial setting
+
 1. The dolphin emulator. You can download from [here](https://ja.dolphin-emu.org/download/). Stable version is better.
 2. The Mario Power Tennis iso image.
 3. Python 3. On Windows, you can use [Anaconda](https://www.anaconda.com/distribution/).
