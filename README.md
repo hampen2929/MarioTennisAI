@@ -5,14 +5,9 @@ We generated a model of Mario tennis using a reinforcement learning algorithm ca
 Mario runs on a reinforcement learning model, eventually grew to win Luigi.
 
 ## Requirements
-Tested on as below.
+Tested PC spec is as below.
 
-*OS:Windows10
-CPU:core i5-2400
-
-GPU:GTX-1060
-
-Memory:16GB
+OS:Windows10, CPU:core i5-2400, GPU:GTX-1060, Memory:16GB
 
 1. The dolphin emulator. You can download from [here](https://ja.dolphin-emu.org/download/). Stable version is better.
 2. The Mario Power Tennis iso image.
