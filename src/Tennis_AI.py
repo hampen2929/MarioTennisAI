@@ -90,7 +90,7 @@ random.seed(seed_value)
 ## パラメータ
 
 #学習率
-learning_rate = 0.001
+learning_rate = 0.0001
 #ゲーム数
 num_episodes = 1000
 gamma = 0.99
@@ -116,7 +116,7 @@ clip_error = True
 normalize_image = True
 save_model_frequency = 100
 resume_previous_training = False
-record_flag = True
+record_flag = False
 
 position = 0
 capacity = 4
@@ -194,7 +194,7 @@ class NeuralNetwork(nn.Module):
     def __init__(self):
         super(NeuralNetwork, self).__init__()
 
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=8, stride=4)
+        self.conv1 = nn.Conv2d(in_channels=4, out_channels=32, kernel_size=8, stride=4)
         self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=4, stride=2)
         self.conv3 = nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=1)
 
@@ -317,10 +317,6 @@ class QNet_Agent(object):
         if self.number_of_games % update_target_frequency == 0:
             self.target_nn.load_state_dict(self.nn.state_dict())
             print('model updated')
-
-        if self.number_of_games % save_model_frequency == 0:
-            file2save = '../model/tennis_save_{0:04d}.pth'.format(self.number_of_games)
-            save_model(self.nn, file2save)
 
         self.number_of_games += 1
 
@@ -497,19 +493,32 @@ info_list = []
 
 count_game = 0
 
-#サーブ時
-memory_server = ExperienceReplay(replay_mem_size)
-qnet_agent_server = QNet_Agent()
+memory = ExperienceReplay(replay_mem_size)
+qnet_agent = QNet_Agent()
 
-#レシーブ時
-memory_receiver = ExperienceReplay(replay_mem_size)
-qnet_agent_receiver = QNet_Agent()
 
-new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
+#new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
+#state = new_state
+
+
+##### 4枚スタック #####
+from collections import deque
+frame_stack_num = 4
+frame_stack = deque(maxlen=frame_stack_num)
+
+for i in range(frame_stack_num):
+    frame = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
+    frame_stack.append(frame)
+
+new_state = np.hstack(frame_stack)
+#new_state = np.array(frame_stack)
+#new_state = np.array(frame_stack)
 state = new_state
+##### 4枚スタック #####
 
 # 1ゲーム終わるまで継続
 print('match: ', count_match['score'])
+
 
 if record_flag == True:
     record()
@@ -519,35 +528,34 @@ while True:
     epsilon = calculate_epsilon(frames_total)
 
     #行動決定
-    if server_flag['flag'] == 1:
-        action = qnet_agent_server.select_action(state, epsilon)
-    else:
-        action = qnet_agent_receiver.select_action(state, epsilon)
+
+    action = qnet_agent.select_action(state, epsilon)
 
     #行動
     take_action(action)
 
     #新しい環境の観測
     state = copy.copy(new_state)
-    new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
+
+    frame = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
+    frame_stack.append(frame)
+
+    #new_state = np.array(frame_stack)
+    new_state = np.hstack(frame_stack)
+
+    #new_state = image_gray_resize(frame_current['frame'], width_cnn, height_cnn)
 
     #スコア取得
     score = (str(my_score['score']), str(enemy_score['score']))
 
     #ExperienceMemory
-    if server_flag['flag'] == 1:
-        memory_server.push(state, action, new_state, reward['reward'], server_flag['flag'])
-    else:
-        memory_receiver.push(state, action, new_state, reward['reward'], server_flag['flag'])
+    memory.push(state, action, new_state, reward['reward'], server_flag['flag'])
 
     #ゲーム終了
     if game_end_flag['flag'] == True:
 
         # 最適化
-        if server_flag['flag'] == 1:
-            qnet_agent_server.optimize(memory_server)
-        else:
-            qnet_agent_receiver.optimize(memory_receiver)
+        qnet_agent.optimize(memory)
 
         game_end_flag['flag'] = False
 
@@ -560,11 +568,9 @@ while True:
         end_flag['flag'] == False
 
         #save model
-        file2save_server = '../model/model_{0:04d}_server.pth'.format(count_match['score'])
-        file2save_receiver = '../model/model_{0:04d}_receiver.pth'.format(count_match['score'])
+        file2save = '../model/model_{0:04d}.pth'.format(count_match['score'])
 
-        save_model(qnet_agent_server.nn, file2save_server)
-        save_model(qnet_agent_receiver.nn, file2save_receiver)
+        save_model(qnet_agent.nn, file2save)
 
         print('match: ', count_match['score'])
 
