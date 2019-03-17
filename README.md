@@ -1,7 +1,7 @@
-# Tennis AI for Mario
+# MarioTennisAI
 ![test4](https://user-images.githubusercontent.com/34574033/54477224-3cb7c600-4849-11e9-8ce6-5398fbefddf7.gif)
 
-MarioTennnis model was generated based on Reinforcement learning.
+We generated a model of Mario tennis using a reinforcement learning algorithm called DQN.
 Mario runs on a reinforcement learning model, eventually grew to win Luigi.
 
 ## Requirements
@@ -21,7 +21,7 @@ Tested on: Windows10
 
 ```bash
 cd ./src
-python Tennis_AI_noramal
+python Tennis_AI_normal
 ```
 
 ## Evaluation
